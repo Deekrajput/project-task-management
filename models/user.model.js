@@ -44,7 +44,7 @@ userSchema.pre("save", async function (next) {
 });
 
 // Method to Omit Password
-userSchema.methods.omitPassword = () => {
+userSchema.methods.omitPassword = function () {
   const userObject = this.toObject();
   delete userObject.password;
   return userObject;
